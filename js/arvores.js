@@ -1,13 +1,13 @@
 function BinarySearchTree() {
     var Node = function(key) {
         this.key = key
-        this.left = left
+        this.left = null
         this.right = null
     }
     var root = null
     this.insert = function(key){
         // insere uma chave
-        var newNode = newNode(key)
+        var newNode = new Node(key)
 
         if(root === null) {
             root = newNode
@@ -125,7 +125,7 @@ function BinarySearchTree() {
         if(node !== null){
             inOrderTraverseNode(node.left, callback)
             callback(node.key)
-            inOrderTraverseNode(node.right, callback)_
+            inOrderTraverseNode(node.right, callback)
 
         }
     }
@@ -149,8 +149,25 @@ function BinarySearchTree() {
     var postOrderTraverseNode = function(node, callback){
         if(node !== null){
             postOrderTraverseNode(node.left, callback)
-            postOrderTraverseNode(node.right, callback)_
+            postOrderTraverseNode(node.right, callback)
             callback(node.key)
         }
     }
 }
+
+var tree = new BinarySearchTree()
+tree.insert(11)
+tree.insert(7)
+tree.insert(15)
+tree.insert(5)
+tree.insert(3)
+tree.insert(9)
+tree.insert(8)
+tree.insert(10)
+tree.insert(13)
+tree.insert(12)
+tree.insert(14)
+tree.insert(20)
+tree.insert(18)
+tree.insert(25)
+tree.insert(6)
