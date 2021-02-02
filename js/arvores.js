@@ -126,7 +126,6 @@ function BinarySearchTree() {
             inOrderTraverseNode(node.left, callback)
             callback(node.key)
             inOrderTraverseNode(node.right, callback)
-
         }
     }
 
@@ -155,6 +154,10 @@ function BinarySearchTree() {
     }
 }
 
+function printNode(value){
+    console.log(value)
+}
+
 var tree = new BinarySearchTree()
 tree.insert(11)
 tree.insert(7)
@@ -171,3 +174,5 @@ tree.insert(20)
 tree.insert(18)
 tree.insert(25)
 tree.insert(6)
+
+tree.inOrderTraverse(printNode)
